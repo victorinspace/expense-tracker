@@ -9,12 +9,56 @@
   <meta name="description" content="Expense Tracker">
   <meta name="author" content="Victor Velasquez">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-  <script src="scripts.js"></script>
+  <h1>Expense Tracker</h1>
+
+  <form id="expense-form">
+    <input type="date" class="expense-form__input">
+    <input type="text" class="expense-form__input" value="$$$">
+    <input type="text" class="expense-form__input" value="What">
+    <textarea name="comment" id="comment-area" class="expense-form__input" cols="30">Anything else?</textarea>
+    <button type="submit" form="expense-form" class="expense-form__button">Add Expense</button>
+  </form>
+
+  <table id="expense-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>$$$</th>
+        <th>What</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+
+    <!-- Fake Data -->
+    <tbody>
+      <tr>
+        <td>1/11/2020</td>
+        <td>$42.35</td>
+        <td>Pizza</td>
+        <td>It was worth it.</td>
+      </tr>
+      <tr>
+        <td>2/32/2020</td>
+        <td>$23.15</td>
+        <td>Pizza</td>
+        <td>What can I say?</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th>Subtotal</th>
+        <td colspan="3">$65.50</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script src="./scripts.js"></script>
 </body>
 
 </html>
