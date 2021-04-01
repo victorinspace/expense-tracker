@@ -9,42 +9,36 @@
 // User should be able to delete expense
 // User should be able to see all of the expenses in an HTML table
 
-const expenseCommentInput = () => {
-  const inputComment = document.getElementById("comment").value;
-  console.log(`Expense Comment: ${inputComment}`);
+const addExpenseToTable = (date, amount, item, comment) => {
+  const expenseTable = document.getElementById("expense-list");
+  const dataRow = expenseTable.insertRow(0);
+
+  dataRow.insertCell(0).innerHTML = date;
+  dataRow.insertCell(1).innerHTML = amount;
+  dataRow.insertCell(2).innerHTML = item;
+  dataRow.insertCell(3).innerHTML = comment;
+
+  dataRow.insertCell(4).innerHTML = `
+    <button class="expense-table__remove-item">Remove</button>
+  `;
 };
 
-const expenseItemInput = () => {
-  const inputItem = document.getElementById("item").value;
-  console.log(`Expense Item: ${inputItem}`);
-};
-
-const expenseAmountInput = () => {
-  const inputAmount = document.getElementById("date").value;
-  console.log(`Expense Amount: ${inputAmount}`);
-};
-
-const expenseDateInput = () => {
-  const inputDate = document.getElementById("amount").value;
-  console.log(`Expense Date: ${inputDate}`);
-};
+const expenseCommentInput = () => document.getElementById("comment").value;
+const expenseItemInput = () => document.getElementById("item").value;
+const expenseAmountInput = () => document.getElementById("amount").value;
+const expenseDateInput = () => document.getElementById("date").value;
 
 const submitExpense = (e) => {
   e.preventDefault();
 
-  // === grab the date ===
-  expenseDateInput();
+  const date = expenseDateInput();
+  const amount = expenseAmountInput();
+  const item = expenseItemInput();
+  const comment = expenseCommentInput();
 
-  // === grab the amount ===
-  expenseAmountInput();
+  addExpenseToTable(date, amount, item, comment);
 
-  // === grab the item ===
-  expenseItemInput();
-
-  // === grab the comment (if there) ===
-  expenseCommentInput();
-
-  // === append the added expense to the expense table ===
+  // --- The subtotal should change depending on the data rows
 };
 
 document
