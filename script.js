@@ -9,14 +9,25 @@
 // User should be able to delete expense
 // User should be able to see all of the expenses in an HTML table
 
+const expenseAmountInput = () => {
+  const inputAmount = document.getElementById("date").value;
+  console.log(`Expense Amount: ${inputAmount}`);
+};
+
+const expenseDateInput = () => {
+  const inputDate = document.getElementById("amount").value;
+  console.log(`Expense Date: ${inputDate}`);
+};
+
 const submitExpense = (e) => {
-  e.preventDefault;
+  e.preventDefault();
 
   // === grab the date ===
-  const expenseDateInput = document.getElementById("date").value;
-  console.log(expenseDateInput);
+  expenseDateInput();
 
   // === grab the amount ===
+  expenseAmountInput();
+
   // === grab the item ===
   // === grab the comment (if there) ===
   // === append the added expense to the expense table ===
