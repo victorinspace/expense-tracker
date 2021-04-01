@@ -5,23 +5,23 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Expense Tracker - </title>
+  <title>Expense Tracker - Victor Velasquez</title>
   <meta name="description" content="Expense Tracker">
   <meta name="author" content="Victor Velasquez">
 
   <link rel="stylesheet" href="./style.css">
-
+  <link rel="shortcut icon" href="#">
 </head>
 
 <body>
   <h1>Expense Tracker</h1>
 
   <form id="expense-form">
-    <input type="date" class="expense-form__input">
-    <input type="text" class="expense-form__input" value="$$$">
-    <input type="text" class="expense-form__input" value="What">
-    <textarea name="comment" id="comment-area" class="expense-form__input" cols="30">Anything else?</textarea>
-    <button type="submit" form="expense-form" class="expense-form__button">Add Expense</button>
+    <input id="date" type="date" class="expense-form__input">
+    <!-- <input id="amount" type="text" class="expense-form__input" value="$$$">
+    <input id="item" type="text" class="expense-form__input" value="Expense item">
+    <textarea id="comment" name="comment" id="comment-area" class="expense-form__input">Anything else?</textarea> -->
+    <button type="submit" class="expense-form__button">Add Expense</button>
   </form>
 
   <table id="expense-table">
@@ -41,12 +41,14 @@
         <td>$42.35</td>
         <td>Pizza</td>
         <td>It was worth it.</td>
+        <td><button class="expense-table__remove-item">Remove</button></td>
       </tr>
       <tr>
         <td>2/32/2020</td>
         <td>$23.15</td>
         <td>Pizza</td>
         <td>What can I say?</td>
+        <td><button class="expense-table__remove-item">Remove</button></td>
       </tr>
     </tbody>
 
@@ -58,7 +60,7 @@
     </tfoot>
   </table>
 
-  <script src="./scripts.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

@@ -1,25 +1,17 @@
+/* === GLOBAL === */
 * {
   padding: 0;
   margin: 0;
 }
 
-#expense-form {
-  margin-bottom: 20px;
-  width: 70%;
-}
-
-.expense-form__input {
-  padding: 13px;
-  margin: 3px;
-}
-
-.expense-form__button {
-  padding: 13px;
+h1 {
+  text-align: center;
+  margin: 8px 0 13px;
 }
 
 table {
   border-collapse: collapse;
-  width: 70%;
+  margin: 50px 0;
 }
 
 td,
@@ -32,3 +24,25 @@ th {
 tr:nth-child(even) {
   background-color: #eee;
 }
+
+/* === FORM === */
+.expense-form__input {
+  padding: 13px;
+  margin: 3px;
+}
+
+.expense-form__button {
+  padding: 13px;
+  border-radius: 5px;
+}
+
+#expense-form {
+  margin-bottom: 20px;
+}
+
+/* === TABLE === */
+.expense-table__remove-item {
+  padding: 8px;
+}
+
+/* when the moon hits your eye */
