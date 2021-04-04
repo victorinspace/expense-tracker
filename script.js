@@ -2,6 +2,7 @@ const expenseDateInput = () => document.getElementById("date").value;
 const expenseAmountInput = () => document.getElementById("amount").value;
 const expenseItemInput = () => document.getElementById("item").value;
 const expenseCommentInput = () => document.getElementById("comment").value;
+const expenseDataArray = [{}];
 
 const addExpenseToTable = (date, amount, item, comment) => {
   const expenseTable = document.getElementById("expense-list");
@@ -19,10 +20,10 @@ const addExpenseToTable = (date, amount, item, comment) => {
 
 const deleteRow = () => {
   const removeRowButton = document.getElementById("remove-item");
+
   removeRowButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const row = e.target.parentNode.parentNode.rowIndex;
-    console.log(row);
+    const row = e.target.parentNode.parentNode.rowIndex - 1;
     document.getElementById("expense-list").deleteRow(row);
   });
 };
@@ -35,7 +36,19 @@ const submitExpense = (e) => {
   const item = expenseItemInput();
   const comment = expenseCommentInput();
 
-  addExpenseToTable(date, amount, item, comment);
+  expenseDataArray.push({
+    date: date,
+    amount: amount,
+    item: item,
+    comment: comment,
+  });
+
+  addExpenseToTable(
+    expenseDataArray.date,
+    expenseDataArray.amount,
+    expenseDataArray.item,
+    expenseDataArray.comment
+  );
 
   deleteRow();
 };
