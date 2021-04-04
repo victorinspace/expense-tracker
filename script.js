@@ -14,19 +14,28 @@ const addExpenseToTable = (date, amount, item, comment) => {
   const dataRow = expenseTable.insertRow(0);
 
   dataRow.insertCell(0).innerHTML = date;
-  dataRow.insertCell(1).innerHTML = amount;
+  dataRow.insertCell(1).innerHTML = `$${amount}`;
   dataRow.insertCell(2).innerHTML = item;
   dataRow.insertCell(3).innerHTML = comment;
 
   dataRow.insertCell(4).innerHTML = `
-    <button class="expense-table__remove-item">Remove</button>
+    <button id="remove-item" class="expense-table__remove-item">Remove</button>
   `;
 };
 
-const expenseCommentInput = () => document.getElementById("comment").value;
-const expenseItemInput = () => document.getElementById("item").value;
-const expenseAmountInput = () => document.getElementById("amount").value;
 const expenseDateInput = () => document.getElementById("date").value;
+const expenseAmountInput = () => document.getElementById("amount").value;
+const expenseItemInput = () => document.getElementById("item").value;
+const expenseCommentInput = () => document.getElementById("comment").value;
+
+const deleteRow = () => {
+  const removeRowButton = document.getElementById("remove-item");
+  removeRowButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const deleteRow = e.target.parentNode.parentNode.rowIndex;
+    document.getElementById("expense-list").deleteRow(deleteRow);
+  });
+};
 
 const submitExpense = (e) => {
   e.preventDefault();
@@ -38,7 +47,9 @@ const submitExpense = (e) => {
 
   addExpenseToTable(date, amount, item, comment);
 
-  // --- The subtotal should change depending on the data rows
+  deleteRow();
+
+  // TODO --- The subtotal should change depending on the data rows
 };
 
 document

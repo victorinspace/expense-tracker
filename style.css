@@ -43,10 +43,16 @@ tr:nth-child(even) {
 }
 
 /* === TABLE === */
-.expense-table__remove-item {
-  padding: 8px;
+.header-row {
+  background-color: rgb(58, 58, 58);
+  color: #eee;
+  text-align: center;
 }
 
 #expense-table {
   background-color: #eee;
+}
+
+.expense-table__remove-item {
+  padding: 8px;
 }
