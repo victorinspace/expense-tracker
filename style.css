@@ -1,0 +1,58 @@
+/* when the moon hits your eye */
+
+/* === GLOBAL === */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 8px 0 13px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 50px 0;
+}
+
+td,
+th {
+  border: 1px solid rgb(195, 194, 194);
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(199, 193, 193);
+}
+
+/* === FORM === */
+.expense-form__input {
+  padding: 13px;
+  margin: 3px;
+}
+
+.expense-form__button {
+  padding: 13px;
+  border-radius: 5px;
+}
+
+#expense-form {
+  margin-bottom: 20px;
+}
+
+/* === TABLE === */
+.header-row {
+  background-color: rgb(58, 58, 58);
+  color: #eee;
+  text-align: center;
+}
+
+#expense-table {
+  background-color: #eee;
+}
+
+.expense-table__remove-item {
+  padding: 8px;
+}

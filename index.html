@@ -4,17 +4,48 @@
 
 <head>
   <meta charset="utf-8">
-
-  <title>Expense Tracker - </title>
+  <title>Expense Tracker - Victor Velasquez</title>
   <meta name="description" content="Expense Tracker">
   <meta name="author" content="Victor Velasquez">
-
-  <link rel="stylesheet" href="styles.css">
-
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="#">
 </head>
 
 <body>
-  <script src="scripts.js"></script>
+  <h1>Expense Tracker</h1>
+
+  <form id="expense-form">
+    <label for="date">Date:</label>
+    <input id="date" type="date" class="expense-form__input" autofocus required>
+
+    <label for="amount">Amount:</label>
+    <input id="amount" type="number" class="expense-form__input" max="5000" required>
+
+    <label for="item">Item:</label>
+    <input id="item" type="text" class="expense-form__input" required>
+
+    <label for="comment">Comment (Optional):</label>
+    <textarea id="comment" name="comment" id="comment-area" class="expense-form__input"></textarea>
+
+    <button type="submit" class="expense-form__button">Add Expense</button>
+  </form>
+
+  <table id="expense-table">
+    <thead>
+      <tr class="header-row">
+        <th>Date</th>
+        <th>$$</th>
+        <th>What</th>
+        <th>Comments</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody id="expense-list">
+    </tbody>
+  </table>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
