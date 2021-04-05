@@ -2,7 +2,7 @@ const expenseDateInput = () => document.getElementById("date").value;
 const expenseAmountInput = () => document.getElementById("amount").value;
 const expenseItemInput = () => document.getElementById("item").value;
 const expenseCommentInput = () => document.getElementById("comment").value;
-// const expenseDataArray = [{}];
+const expenseDataArray = [{}];
 
 const addExpenseToTable = (date, amount, item, comment) => {
   const expenseTable = document.getElementById("expense-list");
@@ -36,14 +36,12 @@ const submitExpense = (e) => {
   const item = expenseItemInput();
   const comment = expenseCommentInput();
 
-  // expenseDataArray.push({
-  //   date: date,
-  //   amount: amount,
-  //   item: item,
-  //   comment: comment,
-  // });
-
-  console.log(this);
+  expenseDataArray.push({
+    date: date,
+    amount: amount,
+    item: item,
+    comment: comment,
+  });
 
   addExpenseToTable(date, amount, item, comment);
 
