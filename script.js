@@ -2,16 +2,16 @@ const expenseDateInput = () => document.getElementById("date").value;
 const expenseAmountInput = () => document.getElementById("amount").value;
 const expenseItemInput = () => document.getElementById("item").value;
 const expenseCommentInput = () => document.getElementById("comment").value;
-const expenseDataArray = [{}];
+// const expenseDataArray = [{}];
 
 const addExpenseToTable = (date, amount, item, comment) => {
   const expenseTable = document.getElementById("expense-list");
   const dataRow = expenseTable.insertRow(0);
 
-  dataRow.insertCell(0).innerHTML = date;
-  dataRow.insertCell(1).innerHTML = `$${amount}`;
-  dataRow.insertCell(2).innerHTML = item;
-  dataRow.insertCell(3).innerHTML = comment;
+  dataRow.insertCell(0).textContent = date;
+  dataRow.insertCell(1).textContent = `$${amount}`;
+  dataRow.insertCell(2).textContent = item;
+  dataRow.insertCell(3).textContent = comment;
 
   dataRow.insertCell(4).innerHTML = `
     <button id="remove-item" class="expense-table__remove-item">Remove</button>
@@ -36,19 +36,16 @@ const submitExpense = (e) => {
   const item = expenseItemInput();
   const comment = expenseCommentInput();
 
-  expenseDataArray.push({
-    date: date,
-    amount: amount,
-    item: item,
-    comment: comment,
-  });
+  // expenseDataArray.push({
+  //   date: date,
+  //   amount: amount,
+  //   item: item,
+  //   comment: comment,
+  // });
 
-  addExpenseToTable(
-    expenseDataArray.date,
-    expenseDataArray.amount,
-    expenseDataArray.item,
-    expenseDataArray.comment
-  );
+  console.log(this);
+
+  addExpenseToTable(date, amount, item, comment);
 
   deleteRow();
 };
